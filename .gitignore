@@ -1,3 +1,6 @@
 *.o
 pipex
 libft/
+output
+input
+leaks
