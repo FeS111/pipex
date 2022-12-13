@@ -6,7 +6,7 @@
 /*   By: fschmid <fschmid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:11:07 by fschmid           #+#    #+#             */
-/*   Updated: 2022/12/13 14:52:45 by fschmid          ###   ########.fr       */
+/*   Updated: 2022/12/13 16:54:18 by fschmid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,12 @@ void	ft_exit(char *error, int custom)
 	exit(1);
 }
 
-char	*read_file(char *file)
+char	*read_fd(int fd)
 {
 	char	*tmp;
 	char	*content;
 	char	*line;
-	int		fd;
 
-	fd = open(file, O_RDONLY);
-	if (!fd)
-		return (NULL);
 	line = get_next_line(fd);
 	content = ft_strdup("");
 	while (line)
@@ -42,6 +38,5 @@ char	*read_file(char *file)
 		free(line);
 		line = get_next_line(fd);
 	}
-	close(fd);
 	return (content);
 }

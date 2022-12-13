@@ -5,14 +5,14 @@ VPATH = src
 
 # Compiler Variables
 CC		 = cc
-CFLAGSS	 = -Wall -Wextra -Werror -g
+# CFLAGSS	 = -Wall -Wextra -Werror -g
 INCFLAG	 = -I src -I libft
 
 AR		 = ar
 ARFLAGS  = -rcs
 # File Variables
 NAME	 = pipex
-SRC		 = $(addprefix src/, main.c)
+SRC		 = $(addprefix src/, main.c util.c)
 OBJ		 = $(addprefix _bin/,$(notdir $(SRC:.c=.o)))
 
 $(NAME): $(OBJ) | libft/libft.a

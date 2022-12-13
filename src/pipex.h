@@ -6,7 +6,7 @@
 /*   By: fschmid <fschmid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:17:52 by fschmid           #+#    #+#             */
-/*   Updated: 2022/12/13 15:42:21 by fschmid          ###   ########.fr       */
+/*   Updated: 2022/12/13 16:53:38 by fschmid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@
 
 void	ft_exit(char *error, int custom);
 
-char	*read_file(char *file);
+char	*read_fd(int fd);
 
 int	spawn_child(int in_fd, char *cmd, char **env);
+
+void	write_output(int argc, char **argv, char *output);
+
+void	pipex(int argc, char **argv, char **env, int fd);
 #endif
