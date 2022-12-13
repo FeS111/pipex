@@ -6,15 +6,18 @@
 /*   By: fschmid <fschmid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:11:07 by fschmid           #+#    #+#             */
-/*   Updated: 2022/12/07 14:27:01 by fschmid          ###   ########.fr       */
+/*   Updated: 2022/12/13 14:52:45 by fschmid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	ft_exit(char *error)
+void	ft_exit(char *error, int custom)
 {
-	ft_putendl_fd(error, 2);
+	if (custom == 0)
+		perror(error);
+	else
+		ft_putendl_fd(error, 2);
 	exit(1);
 }
 
