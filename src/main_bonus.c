@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fschmid <fschmid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:03:49 by fschmid           #+#    #+#             */
-/*   Updated: 2022/12/14 11:39:46 by fschmid          ###   ########.fr       */
+/*   Updated: 2022/12/14 11:35:10 by fschmid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ int	main(int argc, char **argv, char **env)
 	int	fd;
 
 
-	if (argc != 5)
-		ft_exit("You need at exatly 4 arguments (./pipex file1 cmd1 cmd2 file2)", 1);
+	if (argc < 5)
+		ft_exit("You need at least 4 arguments (./pipex file1 cmd1 cmd2 file2)", 1);
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 		ft_exit("", 0);
-	pipex(argc, argv, env, fd);
+	pipex_bonus(argc, argv, env, fd);
 	return (0);
 }
 
-void	pipex(int argc, char **argv, char **env, int fd)
+void	pipex_bonus(int argc, char **argv, char **env, int fd)
 {
 	char	*output;
 	int		out_fd;
