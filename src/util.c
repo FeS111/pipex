@@ -6,7 +6,7 @@
 /*   By: fschmid <fschmid@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:11:07 by fschmid           #+#    #+#             */
-/*   Updated: 2022/12/14 11:34:00 by fschmid          ###   ########.fr       */
+/*   Updated: 2022/12/14 12:02:58 by fschmid          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	ft_exit(char *error, int custom)
 
 int	spawn_child(int in_fd, char *cmd, char **env)
 {
-	int		fds[2];
-	pid_t	pid;
+	int			fds[2];
+	pid_t		pid;
 	char *const	args[4] = {SHELL_PATH, "-c", cmd, NULL};
 
 	if (pipe(fds))
